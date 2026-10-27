@@ -1,0 +1,37 @@
+NEXUS ERP - PROTOTIPO LOCAL DO CAIXA
+===================================
+
+REQUISITOS
+- Windows 10/11
+- Node.js LTS instalado: https://nodejs.org/
+- Internet na primeira instalacao das dependencias
+
+COMO INICIAR
+1. Extraia o ZIP para uma pasta, por exemplo C:\NEXUS-ERP.
+2. Instale o Node.js LTS, se ainda nao estiver instalado.
+3. Execute INSTALAR_DEPENDENCIAS.bat e aguarde concluir.
+4. Execute INICIAR_NEXUS_CAIXA.bat.
+5. Abra http://localhost:5173 no navegador do computador.
+
+CAMERA DO CELULAR
+- A leitura usa a biblioteca ZXing no navegador.
+- O navegador exige HTTPS ou localhost para liberar a camera. O endereco http://IP-DO-PC:5173 pode nao liberar camera no celular.
+- Para teste no celular, use um tunel HTTPS confiavel (por exemplo, um tunel temporario de desenvolvimento) ou configure HTTPS local; nao exponha o sistema publicamente com dados reais.
+- Computador e celular precisam estar na mesma rede se for usar um endereco local, e o firewall pode precisar permitir a conexao.
+
+O QUE ESTE PROTOTIPO FAZ
+- Tela responsiva de Caixa.
+- Adicionar/remover itens de exemplo, alterar quantidades e recalcular total.
+- Cliente opcional para venda rapida.
+- Pagamentos: Pix, Dinheiro, Debito e Credito.
+- Venda a prazo demonstrativa com parcelas.
+- Leitor de codigo de barras pela camera usando ZXing.
+- Registro de vendas recentes no armazenamento local deste navegador.
+- Impressao pelo dialogo do navegador.
+
+LIMITACOES IMPORTANTES
+- Nao conectado ao Supabase nem ao 7System.
+- Nao consulta estoque, nao valida existencia real de produtos e usa catalogo demonstrativo.
+- Os dados ficam somente neste navegador/computador; nao sincronizam entre aparelhos.
+- Abertura/fechamento, cancelamento com autorizacao, comissoes e carnê sao apenas prototipo/fluxo demonstrativo, nao operacoes financeiras reais.
+- Nao usar para vendas reais ate integrar banco de dados, autenticacao, permissoes e auditoria.
