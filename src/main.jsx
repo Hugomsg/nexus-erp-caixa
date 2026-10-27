@@ -38,7 +38,11 @@ function App() {
   useEffect(() => {
     if (!scannerOpen || !videoRef.current) return;
     let cancelled = false;
-    const reader = new BrowserMultiFormatReader(); readerRef.current = reader;
+    const reader = new BrowserMultiFormatReader(undefined, {
+    delayBetweenScanAttempts: 150,
+    delayBetweenScanSuccess: 500,
+    });    
+    readerRef.current = reader;
     reader.decodeFromVideoDevice(undefined, videoRef.current, (result, error, controls) => {
       controlsRef.current = controls;
       if (cancelled || !result) return;
